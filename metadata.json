@@ -1,0 +1,15 @@
+{
+  "author": "Andrey Novikov",
+  "dependencies": [
+    {"name":"puppetlabs/postgresql"}
+  ],
+  "license": "MIT",
+  "name": "Envek-pgtune",
+  "project_page": "https://github.com/Envek/puppet-pgtune",
+  "source": "https://github.com/Envek/puppet-pgtune.git",
+  "project_page": "https://github.com/Envek/puppet-pgtune",
+  "issues_url": "https://github.com/Envek/puppet-pgtune/issues",
+  "summary": "Configures PostgreSQL instance for optimal usage of system resources.",
+  "tags": ["postgresql", "pgtune", "performance", "optimization"],
+  "version": "0.1.0"
+}
