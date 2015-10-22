@@ -69,8 +69,8 @@ class pgtune (
 
   # Checkpoint completion target
   case $db_type {
-    'web':     { $checkpoint_completion_target = 0.7 }
-    default:   { $checkpoint_completion_target = 0.9 }
+    'web':     { $checkpoint_completion_target = '0.7' }
+    default:   { $checkpoint_completion_target = '0.9' }
   }
 
   # Default statistics target
