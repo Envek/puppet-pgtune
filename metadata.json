@@ -11,5 +11,5 @@
   "issues_url": "https://github.com/Envek/puppet-pgtune/issues",
   "summary": "Configures PostgreSQL instance for optimal usage of system resources.",
   "tags": ["postgresql", "pgtune", "performance", "optimization"],
-  "version": "0.1.0"
+  "version": "0.1.2"
 }
