@@ -79,6 +79,26 @@ class pgtune (
     default:   { $default_statistics_target = 100 }
   }
 
+  # Min WAL size
+  case $db_type {
+    'web':     { $min_wal_size = '1GB'    }
+    'oltp':    { $min_wal_size = '2GB'    }
+    'dw':      { $min_wal_size = '4GB'    }
+    'desktop': { $min_wal_size =  '100MB' }
+    'mixed':   { $min_wal_size = '1GB'    }
+    default:   { $min_wal_size = '1GB'    }
+  }
+
+  # Max WAL size
+  case $db_type {
+    'web':     { $max_wal_size = '2GB'    }
+    'oltp':    { $max_wal_size = '4GB'    }
+    'dw':      { $max_wal_size = '8GB'    }
+    'desktop': { $max_wal_size =  '100MB' }
+    'mixed':   { $max_wal_size = '2GB'    }
+    default:   { $max_wal_size = '2GB'    }
+  }
+
   # Applying calculated values
 
   postgresql::server::config_entry { 'max_connections':
@@ -101,8 +121,22 @@ class pgtune (
     value => inline_template('<%= [2048, @maintenance_work_mem.to_i ].min.floor %>MB'),
   }
 
-  postgresql::server::config_entry { 'checkpoint_segments':
-    value => $checkpoint_segments,
+  if $postgresql::repo::version > '9.4' {
+
+    postgresql::server::config_entry { 'min_wal_size':
+      value => $min_wal_size,
+    }
+
+    postgresql::server::config_entry { 'max_wal_size':
+      value => $max_wal_size,
+    }
+
+  } else {
+
+    postgresql::server::config_entry { 'checkpoint_segments':
+      value => $checkpoint_segments,
+    }
+
   }
 
   postgresql::server::config_entry { 'checkpoint_completion_target':
