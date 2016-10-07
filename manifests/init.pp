@@ -121,7 +121,8 @@ class pgtune (
     value => inline_template('<%= [2048, @maintenance_work_mem.to_i ].min.floor %>MB'),
   }
 
-  if $postgresql::repo::version > '9.4' {
+  # return 1 if version A is greater than version B
+  if versioncmp($postgresql::repo::version, '9.4') > 0 {
 
     postgresql::server::config_entry { 'min_wal_size':
       value => $min_wal_size,
