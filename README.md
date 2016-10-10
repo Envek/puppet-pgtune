@@ -83,8 +83,5 @@ Contributing
  7. Create a new Pull Request
 
 
-Links
-------------------
-
 [PgTune]: http://pgtune.leopard.in.ua/
 [librarian-puppet]: http://librarian-puppet.com/
