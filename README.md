@@ -1,5 +1,8 @@
-PgTune
-======
+# PgTune
+
+[![Puppet
+Forge](http://img.shields.io/puppetforge/v/Envek/pgtune.svg)](https://forge.puppetlabs.com/Envek/pgtune) [![Build Status](https://travis-ci.org/Envek/puppet-pgtune.png)](https://travis-ci.org/Envek/puppet-pgtune) [![Puppet Forge
+Downloads](http://img.shields.io/puppetforge/dt/Envek/pgtune.svg)](https://forge.puppetlabs.com/Envek/pgtune/scores)
 
 Puppet module for configuring PostgreSQL installations for optimal performance.
 
