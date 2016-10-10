@@ -1,9 +1,22 @@
 require 'spec_helper'
 
 describe 'pgtune' do
-  let(:facts) { {
-    memorysize_mb: 490.00,
-  } }
+  let(:facts) do
+    {
+      memorysize_mb: 490.00,
+      osfamily: 'Debian',
+      operatingsystem: 'Debian',
+      operatingsystemrelease: 'jessie',
+    }
+  end
+
+  let(:pre_condition) do <<-EOF
+    class { 'postgresql::globals':
+      version  => '9.4',
+    }->
+    class { 'postgresql::server': }
+    EOF
+  end
 
   context 'with no parameters' do
     it { should contain_postgresql__server__config_entry('work_mem').with('value' => '627kB') }

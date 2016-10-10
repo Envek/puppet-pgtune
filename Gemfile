@@ -8,6 +8,7 @@ gem 'metadata-json-lint'
 gem 'rspec-puppet', '~> 2.0'
 gem 'puppetlabs_spec_helper'
 gem 'puppet-syntax'
+gem 'librarian-puppet'
 
 if RUBY_VERSION =~ /^1\.9\./ or RUBY_VERSION =~ /^1\.8\./
   gem 'json', '< 2.0' # newer versions requires at least ruby 2.0
