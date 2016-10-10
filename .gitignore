@@ -1,3 +1,7 @@
 pkg
 spec/fixtures
 tests
+.librarian/*
+.tmp/*
+*.log
+Gemfile.lock

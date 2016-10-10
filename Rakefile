@@ -10,5 +10,10 @@ exclude_paths = %w[ pkg/**/* vendor/**/* spec/**/* ]
 PuppetLint.configuration.ignore_paths = exclude_paths
 PuppetSyntax.exclude_paths = exclude_paths
 
+task :librarian_spec_prep do
+  sh 'librarian-puppet install --path=spec/fixtures/modules/'
+end
+task :spec_prep => :librarian_spec_prep
+
 desc 'Run syntax, lint, and spec tests.'
 task test: [:spec_prep, :validate, :lint, :spec]

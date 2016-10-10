@@ -1,5 +1,3 @@
 fixtures:
-  repositories:
-    postgresql: git://github.com/puppetlabs/puppetlabs-postgresql.git
   symlinks:
     pgtune: "#{source_dir}"
