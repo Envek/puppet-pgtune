@@ -35,20 +35,26 @@ Usage
 
 To configure by default:
 
-	include pgtune
+```puppet
+include pgtune
+```
 
 To limit memory for PostgreSQL by a half of installed RAM:
 
-	class { "pgtune":
-		available_memory_mb => $memorysize_mb / 2,
-	}
+```puppet
+class { "pgtune":
+	available_memory_mb => $memorysize_mb / 2,
+}
+```
 
 To specify database purpose and desired connection limit:
 
-	class { "pgtune":
-		$max_connections => 150,
-		$db_type         => 'web',
-	}
+```puppet
+class { 'pgtune':
+	max_connections => 150,
+	db_type         => 'web',
+}
+```
 
 ### Available DB types
 
