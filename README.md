@@ -86,5 +86,5 @@ Contributing
 Links
 ------------------
 
- * [PgTune]: http://pgtune.leopard.in.ua/
- * [librarian-puppet]: http://librarian-puppet.com/
+[PgTune]: http://pgtune.leopard.in.ua/
+[librarian-puppet]: http://librarian-puppet.com/
