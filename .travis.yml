@@ -2,10 +2,24 @@
 language: ruby
 bundler_args: --without development
 before_install: rm Gemfile.lock || true
+sudo: false
+cache:
+  - bundler
+  - directories:
+    - $HOME/librarian-puppet
 rvm:
   - 1.9.3
   - 2.0.0
+  - 2.1.10
 script: bundle exec rake test
 env:
-  - PUPPET_VERSION="~> 3.7"
-  - PUPPET_VERSION="~> 4.0"
+  global:
+    - LIBRARIAN_PUPPET_TMP="$HOME/librarian-puppet"
+  matrix:
+    - PUPPET_VERSION="~> 3.7.0" STRICT_VARIABLES=yes
+    - PUPPET_VERSION="~> 3.8.0" STRICT_VARIABLES=yes
+    - PUPPET_VERSION="~> 3.7.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
+    - PUPPET_VERSION="~> 3.8.0" STRICT_VARIABLES=yes FUTURE_PARSER=yes
+    - PUPPET_VERSION="~> 4.3.0" STRICT_VARIABLES=yes
+    - PUPPET_VERSION="~> 4.4.0" STRICT_VARIABLES=yes
+    - PUPPET_VERSION="~> 4.7.0" STRICT_VARIABLES=yes

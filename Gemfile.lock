@@ -3,58 +3,59 @@ GEM
   specs:
     CFPropertyList (2.2.8)
     diff-lcs (1.2.5)
-    facter (2.4.4)
+    facter (2.4.6)
       CFPropertyList (~> 2.2.6)
-    hiera (2.0.0)
-      json_pure
-    json (1.8.2)
-    json_pure (1.8.2)
+    hiera (3.2.1)
+    json (2.0.2)
+    json_pure (1.8.3)
     metaclass (0.0.4)
-    metadata-json-lint (0.0.6)
+    metadata-json-lint (0.0.11)
       json
       spdx-licenses (~> 1.0)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
-    puppet (4.1.0)
+    puppet (4.7.0)
+      CFPropertyList (~> 2.2.6)
       facter (> 2.0, < 4)
-      hiera (>= 2.0, < 3)
-      json_pure
-    puppet-lint (1.1.0)
-    puppet-syntax (2.0.0)
+      hiera (>= 2.0, < 4)
+      json_pure (~> 1.8)
+    puppet-lint (2.0.2)
+    puppet-syntax (2.1.0)
       rake
-    puppetlabs_spec_helper (0.10.3)
-      mocha
-      puppet-lint
-      puppet-syntax
-      rake
-      rspec-puppet
-    rake (10.4.2)
-    rspec (3.2.0)
-      rspec-core (~> 3.2.0)
-      rspec-expectations (~> 3.2.0)
-      rspec-mocks (~> 3.2.0)
-    rspec-core (3.2.3)
-      rspec-support (~> 3.2.0)
-    rspec-expectations (3.2.1)
+    puppetlabs_spec_helper (1.2.2)
+      mocha (~> 1.0)
+      puppet-lint (~> 2.0)
+      puppet-syntax (~> 2.0)
+      rspec-puppet (~> 2.0)
+    rake (11.3.0)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.2.0)
-    rspec-mocks (3.2.1)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.2.0)
-    rspec-puppet (2.2.0)
+      rspec-support (~> 3.5.0)
+    rspec-puppet (2.4.0)
       rspec
-    rspec-support (3.2.2)
-    spdx-licenses (1.0.0)
-      json
+    rspec-support (3.5.0)
+    spdx-licenses (1.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   metadata-json-lint
-  puppet (>= 3.7)
+  puppet (>= 3.0.0, < 5.0)
   puppet-lint
   puppet-syntax
   puppetlabs_spec_helper
   rake
   rspec-puppet (~> 2.0)
+
+BUNDLED WITH
+   1.12.5
