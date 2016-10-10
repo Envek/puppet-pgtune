@@ -123,7 +123,7 @@ class pgtune (
 
   # return 1 if version A is greater than version B
   $postgres_version = $postgresql::globals::globals_version
-  if $postgres_version != 'unknown' and versioncmp($postgres_version, '9.4') > 0 {
+  if versioncmp($postgres_version, '9.4') > 0 {
 
     postgresql::server::config_entry { 'min_wal_size':
       value => $min_wal_size,
